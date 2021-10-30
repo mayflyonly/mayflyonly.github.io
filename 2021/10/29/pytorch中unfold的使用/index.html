@@ -15,13 +15,11 @@
 <meta property="og:site_name" content="mayflyonly">
 <meta property="og:description" content="最近在做华为的mindspore模型迁移项目，在原模型中用到了pytorch中的unfold算子，记录一下使用方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://mayflyonly.github.io/2021/10/29/pytorch%E4%B8%ADunfold%E7%9A%84%E4%BD%BF%E7%94%A8/blog/source_posts/pytorch中unfold的使用/001_data.png">
 <meta property="article:published_time" content="2021-10-29T02:33:17.000Z">
-<meta property="article:modified_time" content="2021-10-29T11:47:46.737Z">
+<meta property="article:modified_time" content="2021-10-30T02:29:40.008Z">
 <meta property="article:author" content="帽子霖轩">
 <meta property="article:tag" content="unfold">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://mayflyonly.github.io/2021/10/29/pytorch%E4%B8%ADunfold%E7%9A%84%E4%BD%BF%E7%94%A8/blog/source_posts/pytorch中unfold的使用/001_data.png">
   
     <link rel="alternative" href="/atom.xml" title="mayflyonly" type="application/atom+xml">
   
@@ -62,9 +60,9 @@
 			
 				<li><a href="../../../../index.html">主页</a></li>
 	        
-				<li><a href="../../../../categories">categories</a></li>
+				<li><a href="../../../../categories">类别</a></li>
 	        
-				<li><a href="../../../../tags">tags</a></li>
+				<li><a href="../../../../tags">标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -156,9 +154,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="../../../../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../../../categories">categories</a></li>
+					<li style="width: 33.333333333333336%"><a href="../../../../categories">类别</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../../../tags">tags</a></li>
+					<li style="width: 33.333333333333336%"><a href="../../../../tags">标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -197,7 +195,7 @@
         
       </header>
 	  <div align="center" class="post-count">
-		字数：357字
+		字数：386字
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -215,7 +213,8 @@
 <p>那么先创建一个5*5的矩阵，并转换为tensor</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = torch.tensor(np.arange(<span class="number">1</span>, <span class="number">26</span>)).view(<span class="number">5</span>, <span class="number">5</span>)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/10/29/pytorch%E4%B8%ADunfold%E7%9A%84%E4%BD%BF%E7%94%A8/blog\source_posts\pytorch中unfold的使用\001_data.png" alt="image-20211029184627883"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tensor([[ <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">3</span>,  <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">        [ <span class="number">6</span>,  <span class="number">7</span>,  <span class="number">8</span>,  <span class="number">9</span>, <span class="number">10</span>],</span><br><span class="line">        [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>],</span><br><span class="line">        [<span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>],</span><br><span class="line">        [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>]], dtype=torch.int32)</span><br></pre></td></tr></table></figure>
+
 <p>对其进行第0维，滑动窗口为3，步长为1的unfold操作，则是依次从第0维取3的窗口大小的数据组成新的矩阵，效果如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">out = data.unfold(<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(out)</span><br><span class="line"><span class="built_in">print</span>(out.size())</span><br></pre></td></tr></table></figure>
 
@@ -463,11 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+                <a href="javascript:void(0)" class="js-tag color2">unfold</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">unfold</a>
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
               <li class="article-tag-list-item">
